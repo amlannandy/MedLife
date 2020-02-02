@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './tabs_nav_screen.dart';
+import './screens/tabs_nav_screen.dart';
 
 void main() => runApp(MyApp());
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import './ACCOUNT_SCREEN/account_screen.dart';
-import './DOCTOR_SUPPORT_SCREEN/doctor_support_screen.dart';
-import './HOME_PAGE_SCREEN/home_page_screen.dart';
-import './TESTS_SCREEN/tests_screen.dart';
+import '../screens/account_screen.dart';
+import '../screens/doctor_support_screen.dart';
+import '../screens/home_page_screen.dart';
+import '../screens/tests_screen.dart';
 
 class TabsNavScreen extends StatefulWidget {
   @override
