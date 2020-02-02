@@ -1,16 +1,13 @@
-# healthcare_app
+# MediGO
 
-A new Flutter project.
+An App-based Healthcare service to carry out various medical tests in the comfort of your homes, without any need of complex medical equipment.
 
-## Getting Started
+## Technology Stack
 
-This project is a starting point for a Flutter application.
+1. Mobile Application - The self-explantory skeleton of our project. We are using the Flutter framework for building our application as it allows us quick protoype as well as serving both Android and iOS users with a single codebase.
 
-A few resources to get you started if this is your first Flutter project:
+2. Machine Learning
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+3. Image Processing
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. Natural Language Processing
