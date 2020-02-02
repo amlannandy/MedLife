@@ -6,7 +6,15 @@ class HomePageScreen extends StatelessWidget {
     return CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
-          
+          floating: true,
+          expandedHeight: MediaQuery.of(context).size.height * 0.15,
+          flexibleSpace: FlexibleSpaceBar(
+            title: Text(
+              "MediGO",
+              style: Theme.of(context).textTheme.title,
+            ),
+            centerTitle: true,
+          ),
         ),
       ],
     );

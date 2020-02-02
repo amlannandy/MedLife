@@ -14,25 +14,31 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.amber,
         textTheme: TextTheme(
           title: TextStyle(
-            color: Colors.orange[900],
+            color: Colors.white,
             fontSize: 32,
             fontWeight: FontWeight.bold,
             fontFamily: "Montserrat",
           ),
           display1: TextStyle(
-            color: Colors.black,
+            color: Colors.orange[900],
             fontSize: 18,
             fontFamily: "Montserrat",
             fontWeight: FontWeight.bold,
           ),
           display2: TextStyle(
-            color: Colors.white,
+            color: Colors.amber,
             fontSize: 18,
             fontFamily: "Montserrat",
             fontWeight: FontWeight.bold,
           ),
           display3: TextStyle(
-            color: Colors.orange[900],
+            color: Colors.white,
+            fontSize: 18,
+            fontFamily: "Montserrat",
+            fontWeight: FontWeight.bold,
+          ),
+          display4: TextStyle(
+            color: Colors.black,
             fontSize: 18,
             fontFamily: "Montserrat",
             fontWeight: FontWeight.bold,

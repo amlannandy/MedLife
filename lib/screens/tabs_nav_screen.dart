@@ -31,10 +31,6 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
-        title: Image.asset('assets/images/logo.png', height: 180),
-      ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context).primaryColor,
@@ -95,11 +91,6 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
           ),
         ],
       ),
-      floatingActionButton: _selectedIndex == 1 ? FloatingActionButton(
-        child: Icon(Icons.add, color: Colors.white,),
-        backgroundColor: Theme.of(context).primaryColor,
-        onPressed: () {},
-      ) : null,
     );
   }
 }
