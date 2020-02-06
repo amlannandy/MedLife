@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "340386435965",
+    "firebase_url": "https://medigo-b3817.firebaseio.com",
+    "project_id": "medigo-b3817",
+    "storage_bucket": "medigo-b3817.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340386435965:android:1c8aebcb897b5954903214",
+        "android_client_info": {
+          "package_name": "com.teamcomplexity.healthcare_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340386435965-j8eo3nqmi4ldg5sh9l0g3uo8ikrm4kqm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGtRAxAanoivOyuUxWHUD3P2YRYuiJINQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340386435965-j8eo3nqmi4ldg5sh9l0g3uo8ikrm4kqm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
