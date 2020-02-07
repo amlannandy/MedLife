@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../screens/account_screen.dart';
-import '../screens/doctor_support_screen.dart';
+import '../screens/chat_bot_screen.dart';
 import '../screens/home_page_screen.dart';
 import '../screens/tests_screen.dart';
 
@@ -17,7 +17,7 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
   List _pages = [
     HomePageScreen(),
     TestsScreen(),
-    DoctorSupportScreen(),
+    ChatBotScreen(),
     AccountScreen(),
   ];
 

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import './screens/tabs_nav_screen.dart';
 import './screens/home_page_screen.dart';
+import './providers/facts.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,13 +12,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        
+        ChangeNotifierProvider.value(
+          value: Facts(),
+        )
       ],
       child: MaterialApp(
         title: "MediGo",
         theme: ThemeData(
           primaryColor: Colors.orange[900],
-          accentColor: Colors.amber,
+          accentColor: Colors.orange[300],
           textTheme: TextTheme(
             title: TextStyle(
               color: Colors.white,
