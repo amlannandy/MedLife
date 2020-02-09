@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../screens/account_screen.dart';
-import '../screens/chat_bot_screen.dart';
 import '../screens/home_page_screen.dart';
 import '../screens/tests_screen.dart';
+import '../screens/map_screen.dart';
+import '../screens/chat_bot_screen.dart';
+import '../screens/account_screen.dart';
 
 class TabsNavScreen extends StatefulWidget {
   @override
@@ -17,6 +18,7 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
   List _pages = [
     HomePageScreen(),
     TestsScreen(),
+    MapScreen(),
     ChatBotScreen(),
     AccountScreen(),
   ];
@@ -56,6 +58,19 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
             backgroundColor: Theme.of(context).primaryColor,
             title: Text(
               "Tests",
+              style: TextStyle(
+                fontFamily: "Montserrat",
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ),
+          //Map
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_location),
+            backgroundColor: Theme.of(context).primaryColor,
+            title: Text(
+              "Home",
               style: TextStyle(
                 fontFamily: "Montserrat",
                 fontSize: 18,

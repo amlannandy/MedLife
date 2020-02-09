@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 
 import './screens/tabs_nav_screen.dart';
 import './screens/home_page_screen.dart';
+import './screens/hospital_details_screen.dart';
 import './providers/facts.dart';
+import './providers/hospitals.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +16,10 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider.value(
           value: Facts(),
-        )
+        ),
+        ChangeNotifierProvider.value(
+          value: Hospitals(),
+        ),
       ],
       child: MaterialApp(
         title: "MediGo",
@@ -57,8 +62,9 @@ class MyApp extends StatelessWidget {
           hintColor: Colors.deepOrange[900]
         ),
         routes: {
-          '/' : (ctx) => TabsNavScreen(),
+          '/' : (ctx) => HospitalDetailsScreen(),
           HomePageScreen.routeName : (ctx) => HomePageScreen(),
+          HospitalDetailsScreen.routeName : (ctx) => HospitalDetailsScreen(),
         },
       ),
     );

@@ -9,9 +9,7 @@ class Facts with ChangeNotifier {
   ];
 
   Future<void> fetchAndSetFacts() {
-
     
-
   }
 
   List<Fact> get facts {

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/facts.dart';
+import '../providers/hospitals.dart';
 import '../widgets/fact_card.dart';
+
 
 class HomePageScreen extends StatefulWidget {
 
@@ -15,8 +17,14 @@ class HomePageScreen extends StatefulWidget {
 class _HomePageScreenState extends State<HomePageScreen> {
 
   @override
-  Widget build(BuildContext context) {
+  void didChangeDependencies() {
+    Provider.of<Hospitals>(context).fetchAndSetHospitals();
+    super.didChangeDependencies();
+  }
 
+  @override
+  Widget build(BuildContext context) {
+    
     return Center(child: Text("Hello"),);
 
     // final facts = Provider.of<Facts>(context).facts;
