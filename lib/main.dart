@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import './screens/tabs_nav_screen.dart';
-import './screens/home_page_screen.dart';
+import './screens/appointment_form_screen.dart';
+import './screens/testing_screen.dart';
 import './screens/hospital_details_screen.dart';
 import './providers/facts.dart';
 import './providers/hospitals.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             display2: TextStyle(
-              color: Colors.amber,
+              color: Colors.orange[300],
               fontSize: 18,
               fontFamily: "Montserrat",
               fontWeight: FontWeight.bold,
@@ -62,9 +63,10 @@ class MyApp extends StatelessWidget {
           hintColor: Colors.deepOrange[900]
         ),
         routes: {
-          '/' : (ctx) => HospitalDetailsScreen(),
-          HomePageScreen.routeName : (ctx) => HomePageScreen(),
+          '/' : (ctx) => TabsNavScreen(),
           HospitalDetailsScreen.routeName : (ctx) => HospitalDetailsScreen(),
+          AppointmentFormScreen.routeName : (ctx) => AppointmentFormScreen(),
+          TestingScreen.routeName : (ctx) => TestingScreen(),
         },
       ),
     );
