@@ -60,6 +60,7 @@ flutter:
    - assets/images/jaundice.png
    - assets/images/melanoma.jpg
    - assets/images/wrist_fractures.jpg
+   - assets/images/loading.gif
    - assets/chatbot.json
   #  - images/a_dot_ham.jpeg
 

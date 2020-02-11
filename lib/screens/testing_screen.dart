@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/image_input.dart';
@@ -15,12 +16,14 @@ class TestingScreen extends StatefulWidget {
 }
 
 class _TestingScreenState extends State<TestingScreen> {
+
   File _pickedImage;
+  String result = "Tested positive for Jaundice";
 
   void selectImage(File image) {
     setState(() {
       _pickedImage = image;
-      //Provider.of<Tests>(context).uploadPic(_pickedImage);
+      Provider.of<Tests>(context, listen: false).uploadTestImage(_pickedImage);
     });
   }
 
@@ -46,7 +49,23 @@ class _TestingScreenState extends State<TestingScreen> {
             onPress: () {},
           ),
         ],
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.save,
+          color: Colors.white,
+        ),
+        backgroundColor: Theme.of(context).primaryColor,
+        onPressed: () {
+          Provider.of<Tests>(context, listen: false).uploadTest(diseaseName, result);
+          Fluttertoast.showToast(
+            msg: "Test saved!",
+            backgroundColor: Colors.green,
+            textColor: Colors.white,
+          );
+          Navigator.of(context).pop();
+        },
+      ),
     );
   }
 }

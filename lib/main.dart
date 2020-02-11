@@ -4,9 +4,8 @@ import 'package:provider/provider.dart';
 import './screens/tabs_nav_screen.dart';
 import './screens/appointment_form_screen.dart';
 import './screens/testing_screen.dart';
-import './screens/hospital_details_screen.dart';
-import './providers/facts.dart';
 import './providers/hospitals.dart';
+import './providers/tests.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,10 +15,10 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(
-          value: Facts(),
+          value: Hospitals(),
         ),
         ChangeNotifierProvider.value(
-          value: Hospitals(),
+          value: Tests(),
         ),
       ],
       child: MaterialApp(
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
           textTheme: TextTheme(
             title: TextStyle(
               color: Colors.white,
-              fontSize: 32,
+              fontSize: 28,
               fontWeight: FontWeight.bold,
               fontFamily: "Montserrat",
             ),
@@ -64,7 +63,6 @@ class MyApp extends StatelessWidget {
         ),
         routes: {
           '/' : (ctx) => TabsNavScreen(),
-          HospitalDetailsScreen.routeName : (ctx) => HospitalDetailsScreen(),
           AppointmentFormScreen.routeName : (ctx) => AppointmentFormScreen(),
           TestingScreen.routeName : (ctx) => TestingScreen(),
         },

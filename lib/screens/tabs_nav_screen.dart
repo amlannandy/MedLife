@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../screens/home_page_screen.dart';
 import '../screens/tests_screen.dart';
 import '../screens/map_screen.dart';
 import '../screens/chat_bot_screen.dart';
@@ -16,7 +15,6 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
   int _selectedIndex = 0;
 
   List _pages = [
-    HomePageScreen(),
     TestsScreen(),
     MapScreen(),
     ChatBotScreen(),
@@ -39,19 +37,6 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
         currentIndex: _selectedIndex,
         onTap: _selectPage,
         items: [
-          //Home
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            backgroundColor: Theme.of(context).primaryColor,
-            title: Text(
-              "Home",
-              style: TextStyle(
-                fontFamily: "Montserrat",
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          ),
           //Tests
           BottomNavigationBarItem(
             icon: Icon(Icons.laptop_chromebook),
@@ -70,7 +55,7 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
             icon: Icon(Icons.add_location),
             backgroundColor: Theme.of(context).primaryColor,
             title: Text(
-              "Home",
+              "Map",
               style: TextStyle(
                 fontFamily: "Montserrat",
                 fontSize: 18,
@@ -96,7 +81,7 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
             icon: Icon(Icons.account_box),
             backgroundColor: Theme.of(context).primaryColor,
             title: Text(
-              "Account",
+              "Doctors",
               style: TextStyle(
                 fontFamily: "Montserrat",
                 fontSize: 18,

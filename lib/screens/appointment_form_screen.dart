@@ -24,7 +24,10 @@ class _AppointmentFormScreenState extends State<AppointmentFormScreen> {
   String _gender = "";
   final _genderList = ["Male", "Female", "Other"];
 
-  void _bookAppointment() async {
+  String _reserveBed = "";
+  final _bedList = ["Yes", "No"];
+
+  void _bookAppointment(String hospitalName) async {
 
     if (_nameController.text.isEmpty || _ageController.text.isEmpty || _reasonController.text.isEmpty || _addressController.text.isEmpty || _gender.isEmpty) {
       Fluttertoast.showToast(msg: "Please Enter Details", backgroundColor: Colors.orange.shade200);
@@ -48,6 +51,8 @@ class _AppointmentFormScreenState extends State<AppointmentFormScreen> {
       'reason' : _reasonController.text,
       'age' : int.parse(_ageController.text),
       'gender' : _gender,
+      'hospitalName' : hospitalName,
+      'reserveBed' : _reserveBed,
     });
 
     Navigator.pop(context);
@@ -56,10 +61,13 @@ class _AppointmentFormScreenState extends State<AppointmentFormScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    final hospitalName = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Book Appointment",
+          "Appointment",
           style: Theme.of(context).textTheme.title,
         ),
       ),
@@ -186,10 +194,53 @@ class _AppointmentFormScreenState extends State<AppointmentFormScreen> {
               );
             }).toList(),
           ),
+          Row(
+              children: <Widget>[
+                Icon(
+                  Icons.hotel,
+                  color: Colors.grey,
+                ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.all(15),
+                  child: Text(
+                      "Need a Bed?",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 18
+                      )
+                  ),
+                ),
+              ],
+            ),
+            Row(
+            children: _bedList.map((String v) {
+              return Container(
+                width: 150,
+                child: RadioListTile<String>(
+                  title: Text(
+                    v,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey
+                    ),
+                  ),
+                  value: v,
+                  groupValue: this._reserveBed,
+                  onChanged: (String s) {
+                    setState(() { 
+                      _reserveBed = s; 
+                    }); 
+                  },
+                  dense: true,
+                ),
+              );
+            }).toList(),
+          ),
           SuccessButton(
             icon: Icons.contact_phone,
             text: "Book Appointment",
-            onPress: _bookAppointment,
+            onPress: () => _bookAppointment(hospitalName),
           )
           ],
         ),
