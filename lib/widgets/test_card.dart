@@ -16,14 +16,19 @@ class TestCard extends StatelessWidget {
         Navigator.of(context).pushNamed(TestingScreen.routeName, arguments: name);
       },
       child: Container(
-        margin: const EdgeInsets.all(10),
+        margin: const EdgeInsets.only(
+          top: 5,
+          bottom: 5,
+          left: 10,
+          right: 10,
+        ),
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: <Widget>[
-            Image.asset(image),
+            Image.asset(image, height: 200, width: double.infinity, fit: BoxFit.cover,),
             Container(
               width: double.infinity,
-              color: Colors.black26,
+              color: Colors.black45,
               padding: const EdgeInsets.all(10),
               child: Text(
                 name,

@@ -26,7 +26,6 @@ class Tests with ChangeNotifier {
     );
     if (temp != null)
       _tests = temp;
-    notifyListeners();
   }
 
   Future<void> uploadTest(String test, String result) async {

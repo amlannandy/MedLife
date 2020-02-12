@@ -39,8 +39,8 @@ class _TestsScreenState extends State<TestsScreen> {
             [
               SizedBox(height: 5),
               TestCard(
-                "Jaundice",
-                "assets/images/jaundice.png",
+                "Pneumonia",
+                "assets/images/pneumonia.jpeg",
               ),
               TestCard(
                 "Melanoma",

@@ -25,7 +25,6 @@ class Hospitals with ChangeNotifier {
       ),
     );
     _hospitals = temp;
-    notifyListeners();
   }
 
   Set<Marker> getHospitalMarkers(BuildContext context, Function getHospitalDetails) {

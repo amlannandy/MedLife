@@ -66,7 +66,7 @@ class _MapScreenState extends State<MapScreen> {
                   fit: BoxFit.cover,
                 ),
                 Container(
-                  color: Colors.black26,
+                  color: Colors.black54,
                   padding: const EdgeInsets.all(5),
                   child: Text(
                     currentHospital.address,
