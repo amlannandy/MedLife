@@ -6,6 +6,7 @@ import './screens/appointment_form_screen.dart';
 import './screens/testing_screen.dart';
 import './providers/hospitals.dart';
 import './providers/tests.dart';
+import './providers/ml%20providers/melanoma_provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: Tests(),
+        ),
+        ChangeNotifierProvider.value(
+          value: MelanomaProvider(),
         ),
       ],
       child: MaterialApp(
