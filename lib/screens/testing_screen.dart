@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../widgets/image_input.dart';
 import '../widgets/success_button.dart';
 import '../providers/tests.dart';
+import '../providers/ml providers/melanoma_provider.dart';
 
 class TestingScreen extends StatefulWidget {
 
@@ -18,12 +19,29 @@ class TestingScreen extends StatefulWidget {
 class _TestingScreenState extends State<TestingScreen> {
 
   File _pickedImage;
-  String result = "Tested positive for Jaundice";
+  String imagePath = "";
+  String result = "";
+
+  @override
+  void didChangeDependencies() {
+    Provider.of<MelanomaProvider>(context).loadMelanomaModel();
+    super.didChangeDependencies();
+  }
 
   void selectImage(File image) {
     setState(() {
       _pickedImage = image;
       Provider.of<Tests>(context, listen: false).uploadTestImage(_pickedImage);
+    });
+  }
+
+  void selectImagePath(String path) {
+    imagePath = path;
+  }
+
+  void displayResult(String prediction) {
+    setState(() {
+      result = prediction;
     });
   }
 
@@ -39,16 +57,32 @@ class _TestingScreenState extends State<TestingScreen> {
           style: Theme.of(context).textTheme.title,
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          ImageInput(selectImage),
-          SizedBox(height: 20),
-          SuccessButton(
-            text: "Test",
-            icon: Icons.local_hospital,
-            onPress: () {},
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            ImageInput(selectImage, selectImagePath),
+            SizedBox(height: 20),
+            SuccessButton(
+              text: "Test",
+              icon: Icons.local_hospital,
+              onPress: () {
+                Provider.of<MelanomaProvider>(context, listen: false).runMelanomaModel(imagePath, displayResult);
+              },
+            ),
+            Container(
+              padding: const EdgeInsets.all(5),
+              child: Text(
+                result,
+                style: TextStyle(
+                  color: Colors.red,
+                  fontFamily: "Montserrat",
+                  fontSize: 34,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(

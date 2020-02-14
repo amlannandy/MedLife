@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import '../widgets/test_card.dart';
 import '../providers/hospitals.dart';
 import '../providers/tests.dart';
+import '../providers/doctors.dart';
+import '../providers/pharmacies.dart';
 
 class TestsScreen extends StatefulWidget {
   @override
@@ -15,6 +17,8 @@ class _TestsScreenState extends State<TestsScreen> {
   @override
   void didChangeDependencies() {
     Provider.of<Hospitals>(context).fetchAndSetHospitals();
+    Provider.of<Doctors>(context).fetchAndSetDoctors();
+    Provider.of<Pharmacies>(context).fetchAndSetPharmacies();
     Provider.of<Tests>(context).fetchAndSetTests();
     super.didChangeDependencies();
   }

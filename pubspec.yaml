@@ -26,6 +26,9 @@ dependencies:
   fluttertoast: ^3.1.3
   path_provider: ^1.6.0
   image_picker: ^0.6.0+9
+  tflite: ^1.0.4
+  url_launcher: ^5.0.3
+  get_it: ^1.0.3+2
 
   firebase_storage: ^3.1.1
   cloud_firestore: ^0.13.0+1
@@ -62,10 +65,14 @@ flutter:
    - assets/images/wrist_fractures.jpg
    - assets/images/pneumonia.jpeg
    - assets/images/loading.gif
+   - assets/images/3.jpg
 
    - assets/melanoma_model/dict.txt
    - assets/melanoma_model/manifest.json
    - assets/melanoma_model/model.tflite
+
+   - assets/mobilenet.tflite
+   - assets/labels.txt
 
    - assets/chatbot.json
   #  - images/a_dot_ham.jpeg

@@ -1,14 +1,17 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart' as syspath;
 
 import '../widgets/light_icon_button.dart';
 
 class ImageInput extends StatefulWidget {
 
   final Function selectImage;
+  final Function selectImagePath;
 
-  ImageInput(this.selectImage);
+  ImageInput(this.selectImage, this.selectImagePath);
   
   @override
   _ImageInputState createState() => _ImageInputState();
@@ -30,7 +33,13 @@ class _ImageInputState extends State<ImageInput> {
     setState(() {
       _storedImage = imageFile;
     });
+
+    final appDir = await syspath.getApplicationDocumentsDirectory();
+    final fileName = path.basename(imageFile.path);
+    final savedImage = await imageFile.copy('${appDir.path}/$fileName');
+
     widget.selectImage(_storedImage);
+    widget.selectImagePath(savedImage.path);
   }
 
   Future _uploadPicture() async {
@@ -43,7 +52,12 @@ class _ImageInputState extends State<ImageInput> {
     setState(() {
       _storedImage = imageFile;
     });
+    final appDir = await syspath.getApplicationDocumentsDirectory();
+    final fileName = path.basename(imageFile.path);
+    final savedImage = await imageFile.copy('${appDir.path}/$fileName');
+
     widget.selectImage(_storedImage);
+    widget.selectImagePath(savedImage.path);
   }
 
   @override

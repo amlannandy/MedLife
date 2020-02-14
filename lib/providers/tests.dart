@@ -1,6 +1,7 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:path/path.dart' as Path;
 
 import '../models/Test.dart';
@@ -49,7 +50,7 @@ class Tests with ChangeNotifier {
       StorageReference firebaseStorageRef = FirebaseStorage.instance.ref().child('test_images/${Path.basename(pickedImage.path)}}');
       StorageUploadTask uploadTask = firebaseStorageRef.putFile(pickedImage);
       await uploadTask.onComplete;
-      print("File uploaded!");
+      Fluttertoast.showToast(msg: "Image ready for testing!", backgroundColor: Colors.yellow, textColor: Colors.black);
       firebaseStorageRef.getDownloadURL().then((fileUrl) {
         currentImageUrl = fileUrl;
       });
