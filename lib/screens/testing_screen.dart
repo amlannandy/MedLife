@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../widgets/image_input.dart';
 import '../widgets/success_button.dart';
+import '../widgets/app_bar_deco.dart';
 import '../providers/tests.dart';
 import '../providers/ml providers/melanoma_provider.dart';
 
@@ -52,22 +53,23 @@ class _TestingScreenState extends State<TestingScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          diseaseName,
-          style: Theme.of(context).textTheme.title,
-        ),
+        flexibleSpace: AppBarDeco(diseaseName),
+        backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             ImageInput(selectImage, selectImagePath),
             SizedBox(height: 20),
-            SuccessButton(
-              text: "Test",
-              icon: Icons.local_hospital,
-              onPress: () {
-                Provider.of<MelanomaProvider>(context, listen: false).runMelanomaModel(imagePath, displayResult);
-              },
+            Container(
+              width: MediaQuery.of(context).size.width * 0.6,
+              child: SuccessButton(
+                text: "Test",
+                icon: Icons.local_hospital,
+                onPress: () {
+                  Provider.of<MelanomaProvider>(context, listen: false).runMelanomaModel(imagePath, displayResult);
+                },
+              ),
             ),
             Container(
               padding: const EdgeInsets.all(5),

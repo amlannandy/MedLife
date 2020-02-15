@@ -49,7 +49,7 @@ class DoctorCard extends StatelessWidget {
                       doc.name,
                       style: TextStyle(
                         fontSize: 14,
-                        color: Colors.orange,
+                        color: Colors.black,
                         fontFamily: "Montserrat",
                         fontWeight: FontWeight.bold,
                       ),
@@ -66,7 +66,7 @@ class DoctorCard extends StatelessWidget {
                       doc.field,
                       style: TextStyle(
                         fontSize: 12,
-                        color: Colors.black,
+                        color: Theme.of(context).primaryColor,
                         fontFamily: "Montserrat",
                       ),
                     ),

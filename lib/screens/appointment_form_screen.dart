@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:healthcare_app/widgets/light_icon_button.dart';
 
 import '../widgets/success_button.dart';
-
+import '../widgets/app_bar_deco.dart';
 
 class AppointmentFormScreen extends StatefulWidget {
 
@@ -20,12 +21,32 @@ class _AppointmentFormScreenState extends State<AppointmentFormScreen> {
   final _ageController = TextEditingController();
   final _reasonController = TextEditingController();
   final _addressController = TextEditingController();
+  DateTime _selectedDate;
+
+  String _displayDate = "Current Date";
 
   String _gender = "";
   final _genderList = ["Male", "Female", "Other"];
 
   String _reserveBed = "";
   final _bedList = ["Yes", "No"];
+
+  void _pickDate() {
+    showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2020),
+      lastDate: DateTime(2020),
+    ).then((date) {
+        if (date == null) {
+          return;
+        }
+        setState(() {
+          _selectedDate = date;
+          _displayDate = _selectedDate.toString();
+        });
+    });
+  }
 
   void _bookAppointment(String hospitalName) async {
 
@@ -53,6 +74,7 @@ class _AppointmentFormScreenState extends State<AppointmentFormScreen> {
       'gender' : _gender,
       'hospitalName' : hospitalName,
       'reserveBed' : _reserveBed,
+      'date' : _selectedDate.toString(),
     });
 
     Navigator.pop(context);
@@ -66,15 +88,13 @@ class _AppointmentFormScreenState extends State<AppointmentFormScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Appointment",
-          style: Theme.of(context).textTheme.title,
-        ),
+        flexibleSpace: AppBarDeco(hospitalName),
+        backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             TextFormField(
               textCapitalization: TextCapitalization.words,
@@ -237,6 +257,24 @@ class _AppointmentFormScreenState extends State<AppointmentFormScreen> {
               );
             }).toList(),
           ),
+          SizedBox(height: 20),
+          Container(
+            alignment: Alignment.centerLeft,
+            padding: EdgeInsets.all(15),
+            child: Text(
+              _displayDate,
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 18
+              )
+            ),
+          ),
+          LightIconButton(
+            function: _pickDate,
+            icon: Icons.date_range,
+            text: "Date of Appointment",
+          ),
+          SizedBox(height: 20),
           SuccessButton(
             icon: Icons.contact_phone,
             text: "Book Appointment",

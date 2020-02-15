@@ -7,6 +7,7 @@ import '../models/Pharmacy.dart';
 class Pharmacies with ChangeNotifier {
 
   List<Pharmacy> _pharmacies;
+  String currentImageUrl;
 
   Future<void> fetchAndSetPharmacies() async {
 
@@ -50,9 +51,6 @@ class Pharmacies with ChangeNotifier {
     );
     return myMarkers;
   }
-
-  
-
 
   Pharmacy findpharmacyById(String id) {
     return _pharmacies.firstWhere((pharmacy) => pharmacy.id == id);

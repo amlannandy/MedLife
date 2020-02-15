@@ -1,6 +1,10 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:healthcare_app/providers/orders.dart';
+import 'package:healthcare_app/widgets/light_icon_button.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/success_button.dart';
 
@@ -16,32 +20,56 @@ class MedicinePurchaseScreen extends StatefulWidget {
 
 class _MedicinePurchaseScreenState extends State<MedicinePurchaseScreen> {
 
+  File _prescriptionImage;
+
   final _nameController = TextEditingController();
   final _medicineListController = TextEditingController();
   final _addressController = TextEditingController();
-  String prescriptionUrl = "";
+
+  Future _takePictureByCamera() async {
+    final imageFile = await ImagePicker.pickImage(
+      source: ImageSource.camera,
+      maxWidth: 600,
+    );
+    if (imageFile == null)
+      return;
+    setState(() {
+      _prescriptionImage = imageFile;
+    });
+    Provider.of<Orders>(context).uploadPrescriptionImage(_prescriptionImage);
+    Fluttertoast.showToast(msg: "Prescription uploaded!");
+  }
+
+  Future _takePictureByGallery() async {
+    final imageFile = await ImagePicker.pickImage(
+      source: ImageSource.gallery,
+      maxWidth: 600,
+    );
+    if (imageFile == null)
+      return;
+    setState(() {
+      _prescriptionImage = imageFile;
+    });
+    Provider.of<Orders>(context).uploadPrescriptionImage(_prescriptionImage);
+    Fluttertoast.showToast(msg: "Prescription uploaded!");
+  }
 
 
   void _purchaseMedince(String pharmacyName) async {
 
-    if (_nameController.text.isEmpty || _medicineListController.text.isEmpty || _addressController.text.isEmpty) {
+    if (_nameController.text.isEmpty || _medicineListController.text.isEmpty || _addressController.text.isEmpty || _prescriptionImage == null) {
       Fluttertoast.showToast(msg: "Please Enter Details", backgroundColor: Colors.orange.shade200);
       return;
     }
 
-    //To implement prescription upload
+    Provider.of<Orders>(context, listen: false).placeOrder(
+      _nameController.text,
+      pharmacyName,
+      _medicineListController.text,
+      _addressController.text
+    );
 
     Fluttertoast.showToast(msg: "Order placed! We'll send you the bill soon!", backgroundColor: Colors.greenAccent, textColor: Colors.black);
-
-
-    Firestore.instance.collection('medicine_purchases').document().setData({
-      'name' : _nameController.text,
-      'address' : _addressController.text,
-      'medcineList' : _medicineListController.text,
-      'prescriptionUrl' : prescriptionUrl,
-      'storeName' : pharmacyName,
-    });
-
     Navigator.pop(context);
 
   }
@@ -49,7 +77,10 @@ class _MedicinePurchaseScreenState extends State<MedicinePurchaseScreen> {
   @override
   Widget build(BuildContext context) {
 
-    final pharmacyName = ModalRoute.of(context).settings.arguments;
+    String pharmacyName = ModalRoute.of(context).settings.arguments;
+    if (pharmacyName == null) {
+      pharmacyName = "Harihar Store";
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -128,20 +159,40 @@ class _MedicinePurchaseScreenState extends State<MedicinePurchaseScreen> {
                   alignment: Alignment.centerLeft,
                   padding: EdgeInsets.all(18),
                   child: Text(
-                      "Attach Prescription",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 18
-                      )
+                    "Attach Prescription",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 18
+                    )
                   ),
                 ),
               ],
             ),
-          SuccessButton(
-            icon: Icons.contact_phone,
-            text: "Place Order",
-            onPress: () => _purchaseMedince(pharmacyName),
-          )
+            SizedBox(height: 25,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                LightIconButton(
+                  icon: Icons.photo_size_select_actual,
+                  text: "Gallery",
+                  function: _takePictureByGallery,
+                ), 
+                LightIconButton(
+                  icon: Icons.camera_alt,
+                  text: "Camera",
+                  function: _takePictureByCamera,
+                ),  
+              ],
+            ),
+            SizedBox(height: 25,),
+            SuccessButton(
+              icon: Icons.contact_phone,
+              text: "Place Order",
+              onPress: () {
+                _purchaseMedince(pharmacyName);
+                Navigator.pop(context);
+              } 
+            )
           ],
         ),
       ),

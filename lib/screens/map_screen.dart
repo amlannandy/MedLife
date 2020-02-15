@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../models/Pharmacy.dart';
 import '../models/Hospital.dart';
 import '../providers/hospitals.dart';
 import '../providers/pharmacies.dart';
 import '../widgets/success_button.dart';
-import '../models/Pharmacy.dart';
+import '../widgets/app_bar_deco.dart';
 import '../screens/medicine_purchase_screen.dart';
 import '../screens/appointment_form_screen.dart';
 
 class MapScreen extends StatefulWidget {
+
+  static const routeName = 'map_screen';
 
   @override
   _MapScreenState createState() => _MapScreenState();
@@ -24,19 +27,23 @@ class _MapScreenState extends State<MapScreen> {
     Set<Marker> _hospitalMarkers = Provider.of<Hospitals>(context).getHospitalMarkers(context, showHospitalDetails);
     Set<Marker> _pharmacyMarkers = Provider.of<Pharmacies>(context).getPharmacyMarkers(context, showPharmacyDetails);
 
-    Set<Marker> _finalMarkers = {};
-    _finalMarkers.addAll(_hospitalMarkers);
-    _finalMarkers.addAll(_pharmacyMarkers);
+    _hospitalMarkers.addAll(_pharmacyMarkers);
 
-    return GoogleMap(
-      initialCameraPosition: CameraPosition(
-              target: LatLng(20.2961, 85.8245),
-              zoom: 15,
-            ),
-            myLocationEnabled: true,
-            mapType: MapType.satellite,
-            compassEnabled: true,
-            markers: _finalMarkers,
+    return Scaffold(
+      appBar: AppBar(
+        flexibleSpace: AppBarDeco("Health Network"),
+        backgroundColor: Colors.transparent,
+      ),
+      body: GoogleMap(
+        initialCameraPosition: CameraPosition(
+          target: LatLng(20.2961, 85.8245),
+          zoom: 15,
+        ),
+        myLocationEnabled: true,
+        mapType: MapType.satellite,
+        compassEnabled: true,
+        markers: _hospitalMarkers,
+      ),
     );
   }
 

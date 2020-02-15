@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 
 import '../providers/chat_bot_provider.dart';
+import '../widgets/app_bar_deco.dart';
 
 class ChatBotScreen extends StatefulWidget {
 
@@ -105,24 +106,8 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text(
-          "Dr. Chadda", 
-          style: Theme.of(context).textTheme.title,
-        ),
-        actions: <Widget>[
-          FlatButton(
-            child: Text(
-              isEnglish ? "English" : "हिंदी",
-              style: Theme.of(context).textTheme.display3,
-            ),
-            color: Theme.of(context).primaryColor,
-            onPressed: () {
-              setState(() {
-                isEnglish = !isEnglish;
-              });
-            },
-          )
-        ],
+        flexibleSpace: AppBarDeco("Dr. Mukherjee"),
+        backgroundColor: Colors.transparent,
       ),
       body: Column(children: <Widget>[
         Flexible(
@@ -133,7 +118,8 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
               itemCount: messageList.length,
             )),
         _queryInputWidget(context),
-      ]),
+        ]
+      ),
     );
   }
 }

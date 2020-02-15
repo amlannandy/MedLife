@@ -70,6 +70,7 @@ flutter:
    - assets/melanoma_model/dict.txt
    - assets/melanoma_model/manifest.json
    - assets/melanoma_model/model.tflite
+   - assets/melanoma_model/melanoma_model.tflite
 
    - assets/mobilenet.tflite
    - assets/labels.txt
