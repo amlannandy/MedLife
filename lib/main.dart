@@ -89,7 +89,7 @@ class MyApp extends StatelessWidget {
           hintColor: Colors.deepOrange[900]
         ),
         routes: {
-          '/' : (ctx) => MedicinePurchaseScreen(),
+          '/' : (ctx) => TabsNavScreen(),
           DoctorsScreen.routeName : (ctx) => DoctorsScreen(),
           MapScreen.routeName : (ctx) => MapScreen(),
           AppointmentFormScreen.routeName : (ctx) => AppointmentFormScreen(),
