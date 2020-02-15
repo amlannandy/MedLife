@@ -108,6 +108,20 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
       appBar: AppBar(
         flexibleSpace: AppBarDeco("Dr. Mukherjee"),
         backgroundColor: Colors.transparent,
+        actions: <Widget>[
+          FlatButton(
+            child: Text(
+              isEnglish ? "English" : "हिंदी",
+              style: Theme.of(context).textTheme.display3,
+            ),
+            color: Colors.transparent,
+            onPressed: () {
+              setState(() {
+                isEnglish = !isEnglish;
+              });
+            },
+          )
+        ],
       ),
       body: Column(children: <Widget>[
         Flexible(

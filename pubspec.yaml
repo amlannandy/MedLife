@@ -60,12 +60,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
    - assets/images/logo.png
-   - assets/images/jaundice.png
    - assets/images/melanoma.jpg
-   - assets/images/wrist_fractures.jpg
+   - assets/images/skin_diseases.jpg
    - assets/images/pneumonia.jpeg
    - assets/images/loading.gif
-   - assets/images/3.jpg
 
    - assets/melanoma_model/dict.txt
    - assets/melanoma_model/manifest.json

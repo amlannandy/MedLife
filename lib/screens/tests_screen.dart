@@ -68,9 +68,9 @@ class _TestsScreenState extends State<TestsScreen> {
                 "assets/images/melanoma.jpg",
               ),
               TestCard(
-                "Wrist Fractures",
-                "Check if it requires a surgery",
-                "assets/images/wrist_fractures.jpg",
+                "Skin Diseases",
+                "Check what that skin rash might be",
+                "assets/images/skin_diseases.jpg",
               ),
             ]
           )

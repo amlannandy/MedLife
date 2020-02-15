@@ -36,7 +36,7 @@ class _MedicinePurchaseScreenState extends State<MedicinePurchaseScreen> {
     setState(() {
       _prescriptionImage = imageFile;
     });
-    Provider.of<Orders>(context).uploadPrescriptionImage(_prescriptionImage);
+    Provider.of<Orders>(context, listen: false).uploadPrescriptionImage(_prescriptionImage);
     Fluttertoast.showToast(msg: "Prescription uploaded!");
   }
 
@@ -50,7 +50,7 @@ class _MedicinePurchaseScreenState extends State<MedicinePurchaseScreen> {
     setState(() {
       _prescriptionImage = imageFile;
     });
-    Provider.of<Orders>(context).uploadPrescriptionImage(_prescriptionImage);
+    Provider.of<Orders>(context, listen: false).uploadPrescriptionImage(_prescriptionImage);
     Fluttertoast.showToast(msg: "Prescription uploaded!");
   }
 
@@ -190,7 +190,6 @@ class _MedicinePurchaseScreenState extends State<MedicinePurchaseScreen> {
               text: "Place Order",
               onPress: () {
                 _purchaseMedince(pharmacyName);
-                Navigator.pop(context);
               } 
             )
           ],
