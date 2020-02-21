@@ -56,6 +56,14 @@ class Tests with ChangeNotifier {
       });
       notifyListeners();
   }
+
+  TestData findTestById(String id) {
+    return _tests.firstWhere((test) => test.id == id);
+  }
+
+  List<TestData> get tests {
+    return [..._tests];
+  }
   
 
 }

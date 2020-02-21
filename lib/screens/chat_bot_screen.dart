@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 
 import '../providers/chat_bot_provider.dart';
-import '../widgets/app_bar_deco.dart';
 
 class ChatBotScreen extends StatefulWidget {
 
@@ -106,7 +105,7 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        flexibleSpace: AppBarDeco("Dr. Mukherjee"),
+        flexibleSpace: AppBarDecoCustom("Dr. Mukherjee"),
         backgroundColor: Colors.transparent,
         actions: <Widget>[
           FlatButton(
@@ -133,6 +132,37 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
             )),
         _queryInputWidget(context),
         ]
+      ),
+    );
+  }
+}
+
+class AppBarDecoCustom extends StatelessWidget {
+
+  final String title;
+
+  AppBarDecoCustom(this.title);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.2,
+      padding: EdgeInsets.only(
+        left: 10,
+        top: 15,
+        bottom: 10,
+      ),
+      alignment: Alignment.bottomLeft,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(colors: [Color.fromRGBO(241, 39, 17, 0.6), Color.fromRGBO(245, 175, 25, 0.6)],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topRight,
+        ),
+      ),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.title,
       ),
     );
   }

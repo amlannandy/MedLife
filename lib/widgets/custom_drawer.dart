@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+
+import '../screens/tests_history_screen.dart';
 import '../screens/orders_screen.dart';
 import '../screens/doctors_screen.dart';
 import '../screens/map_screen.dart';
+import '../screens/appointments_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
 
@@ -123,7 +126,9 @@ class CustomDrawer extends StatelessWidget {
                 subtitle: "View your past test results",
                 icon: Icons.history,
                 context: context,
-                onClick: () {}
+                onClick: () {
+                  Navigator.of(context).pushNamed(TestHistoryScreen.routeName);
+                }
               ),
               getDivider(),
               buildListTitle(
@@ -131,7 +136,9 @@ class CustomDrawer extends StatelessWidget {
                 subtitle: "View your past and future appointments",
                 icon: Icons.format_list_numbered,
                 context: context,
-                onClick: () {}
+                onClick: () {
+                  Navigator.of(context).pushNamed(AppointmentsScreen.routeName);
+                }
               ),
               getDivider(),
               buildListTitle(
@@ -142,6 +149,14 @@ class CustomDrawer extends StatelessWidget {
                 onClick: () {
                   Navigator.of(context).pushNamed(OrdersScreen.routeName);
                 }
+              ),
+              getDivider(),
+              buildListTitle(
+                title: "My Family",
+                subtitle: "Medical history of your loved ones",
+                icon: Icons.home,
+                context: context,
+                onClick: () {}
               ),
               getDivider(),
               buildListTitle(

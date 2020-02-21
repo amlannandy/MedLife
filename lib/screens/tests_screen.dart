@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
+import '../screens/testing_screens/melanoma_testing_screen.dart';
+import '../screens/testing_screens/pneumonia_testing_screen.dart';
+import '../screens/testing_screens/skin_diseases_testing_screen.dart';
 import '../widgets/test_card.dart';
-import '../providers/hospitals.dart';
-import '../providers/tests.dart';
-import '../providers/doctors.dart';
-import '../providers/orders.dart';
-import '../providers/pharmacies.dart';
 
 class TestsScreen extends StatefulWidget {
   @override
@@ -14,16 +11,6 @@ class TestsScreen extends StatefulWidget {
 }
 
 class _TestsScreenState extends State<TestsScreen> {
-
-  @override
-  void didChangeDependencies() {
-    Provider.of<Hospitals>(context).fetchAndSetHospitals();
-    Provider.of<Doctors>(context).fetchAndSetDoctors();
-    Provider.of<Pharmacies>(context).fetchAndSetPharmacies();
-    Provider.of<Tests>(context).fetchAndSetTests();
-    Provider.of<Orders>(context).fetchAndSetOrders();
-    super.didChangeDependencies();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +35,7 @@ class _TestsScreenState extends State<TestsScreen> {
               ),
             ),
             child: Text(
-              "Medigo",
+              "Our Tests",
               style: Theme.of(context).textTheme.title,
             ),
           ),
@@ -61,16 +48,25 @@ class _TestsScreenState extends State<TestsScreen> {
                 "Pneumonia",
                 "Check whether it's bacterial or viral",
                 "assets/images/pneumonia.jpeg",
+                () {
+                  Navigator.of(context).pushNamed(PneumoniaTestingScreen.routeName);
+                }
               ),
               TestCard(
                 "Melanoma",
                 "Check whether your case is benign or malignant",
                 "assets/images/melanoma.jpg",
+                () {
+                  Navigator.of(context).pushNamed(MelanomaTestingScreen.routeName);
+                }
               ),
               TestCard(
                 "Skin Diseases",
                 "Check what that skin rash might be",
                 "assets/images/skin_diseases.jpg",
+                () {
+                  Navigator.of(context).pushNamed(SkinDiseasesTestingScreen.routeName);
+                }
               ),
             ]
           )

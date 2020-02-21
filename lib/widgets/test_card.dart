@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../screens/testing_screen.dart';
-
 class TestCard extends StatelessWidget {
 
   final String name;
   final String subtitle;
   final String image;
+  final Function function;
 
-  TestCard(this.name, this.subtitle, this.image);
+  TestCard(this.name, this.subtitle, this.image, this.function);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.of(context).pushNamed(TestingScreen.routeName, arguments: name);
-      },
+      onTap: function,
       child: Container(
         margin: const EdgeInsets.only(
           top: 5,

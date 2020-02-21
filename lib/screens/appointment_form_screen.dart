@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:healthcare_app/widgets/light_icon_button.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/success_button.dart';
 import '../widgets/app_bar_deco.dart';
+import '../widgets/light_icon_button.dart';
+import '../providers/appointments.dart';
 
 class AppointmentFormScreen extends StatefulWidget {
 
@@ -21,7 +22,7 @@ class _AppointmentFormScreenState extends State<AppointmentFormScreen> {
   final _ageController = TextEditingController();
   final _reasonController = TextEditingController();
   final _addressController = TextEditingController();
-  DateTime _selectedDate;
+  DateTime _selectedDate = DateTime.now();
 
   String _displayDate = "Current Date";
 
@@ -35,8 +36,8 @@ class _AppointmentFormScreenState extends State<AppointmentFormScreen> {
     showDatePicker(
       context: context,
       initialDate: DateTime.now(),
-      firstDate: DateTime(2020),
-      lastDate: DateTime(2020),
+      firstDate: DateTime(2019),
+      lastDate: DateTime.now(),
     ).then((date) {
         if (date == null) {
           return;
@@ -66,16 +67,16 @@ class _AppointmentFormScreenState extends State<AppointmentFormScreen> {
     Fluttertoast.showToast(msg: "Appointment booked!", backgroundColor: Colors.greenAccent, textColor: Colors.black);
 
 
-    Firestore.instance.collection('appointments').document().setData({
-      'name' : _nameController.text,
-      'address' : _addressController.text,
-      'reason' : _reasonController.text,
-      'age' : int.parse(_ageController.text),
-      'gender' : _gender,
-      'hospitalName' : hospitalName,
-      'reserveBed' : _reserveBed,
-      'date' : _selectedDate.toString(),
-    });
+    Provider.of<Appointments>(context, listen: false).uploadAppointment(
+      _nameController.text,
+      _addressController.text,
+      _reasonController.text,
+      _ageController.text,
+      _gender,
+      hospitalName,
+      _reserveBed,
+      _selectedDate.toString(),
+    );
 
     Navigator.pop(context);
 

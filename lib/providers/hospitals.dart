@@ -49,11 +49,12 @@ class Hospitals with ChangeNotifier {
     return myMarkers;
   }
 
-  
-
-
   Hospital findHospitalById(String id) {
     return _hospitals.firstWhere((hospital) => hospital.id == id);
+  }
+
+  String findHospitalImageByName(String name) {
+    return _hospitals.firstWhere((hospital) => hospital.name == name).imageUrl;
   }
 
   List<Hospital> get hospitals {

@@ -44,7 +44,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.7.4
 
+
+flutter_icons:
+  image_path: "assets/images/our_logo.png"
+  android: true
+  ios: true 
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -65,13 +71,14 @@ flutter:
    - assets/images/pneumonia.jpeg
    - assets/images/loading.gif
 
-   - assets/melanoma_model/dict.txt
-   - assets/melanoma_model/manifest.json
+   - assets/melanoma_model/labels.txt
    - assets/melanoma_model/model.tflite
-   - assets/melanoma_model/melanoma_model.tflite
+   - assets/pneumonia_model/labels.txt
+   - assets/pneumonia_model/model.tflite
+   - assets/skin_diseases_model/labels.txt
+   - assets/skin_diseases_model/model.tflite
 
-   - assets/mobilenet.tflite
-   - assets/labels.txt
+   - assets/images/our_logo.png
 
    - assets/chatbot.json
   #  - images/a_dot_ham.jpeg
