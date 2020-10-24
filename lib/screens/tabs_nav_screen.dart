@@ -14,11 +14,7 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
 
   int _selectedIndex = 1;
 
-  List _pages = [
-    TestsScreen(),
-    HomeScreen(),
-    ChatBotScreen(),
-  ];
+  List _pages = [ TestsScreen(), HomeScreen(), ChatBotScreen(),];
 
   void _selectPage(int index) {
     setState(() {
@@ -37,14 +33,14 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
               width: double.infinity,
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [Color.fromRGBO(253, 200, 48, 1), Color.fromRGBO(243, 115, 53, 1)],
+                gradient: LinearGradient(List: [Color.fromRGBO(253, 200, 48, 1), Color.fromRGBO(243, 115, 53, 1)],
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
                 ),
               ),
               child: Text(
                 "WEARABLE STATS",
-                style: Theme.of(context).textTheme.display3,
+                style: Theme.of(context).textTheme.headline2,
               ),
             ),
             Row(
@@ -63,7 +59,7 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
                       padding: const EdgeInsets.all(10),
                       child: Text(
                         "Pulse Rate",
-                        style: Theme.of(context).textTheme.display3,
+                        style: Theme.of(context).textTheme.headline2,
                       ),
                     ),
                   ],
@@ -72,7 +68,7 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
                   padding: const EdgeInsets.all(10),
                   child: Text(
                     "Pulse rate value",
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.headline4,
                   ),
                 ),
               ],
@@ -93,7 +89,7 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
                       padding: const EdgeInsets.all(10),
                       child: Text(
                         "Haemoglobin",
-                        style: Theme.of(context).textTheme.display3,
+                        style: Theme.of(context).textTheme.headline2,
                       ),
                     ),
                   ],
@@ -102,7 +98,7 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
                   padding: const EdgeInsets.all(10),
                   child: Text(
                     "Haemoglobin value",
-                    style: Theme.of(context).textTheme.display1,
+                    style: Theme.of(context).textTheme.headline4,
                   ),
                 ),
               ],
@@ -129,40 +125,19 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.laptop_chromebook),
             backgroundColor: Theme.of(context).primaryColor,
-            title: Text(
-              "Tests",
-              style: TextStyle(
-                fontFamily: "Montserrat",
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-              ),
-            )
+            label: 'Tests',
           ),
           //Home
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             backgroundColor: Theme.of(context).primaryColor,
-            title: Text(
-              "Home",
-              style: TextStyle(
-                fontFamily: "Montserrat",
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-              ),
-            )
+            label: 'Home',
           ),
           //Chatbot Support
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
             backgroundColor: Theme.of(context).primaryColor,
-            title: Text(
-              "Support",
-              style: TextStyle(
-                fontFamily: "Montserrat",
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-              ),
-            )
+            label: "Support",
           ),
         ],
       ),

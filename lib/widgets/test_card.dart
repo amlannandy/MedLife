@@ -36,7 +36,7 @@ class TestCard extends StatelessWidget {
                   ),
                   child: Text(
                     name,
-                    style: Theme.of(context).textTheme.display3,
+                    style: Theme.of(context).textTheme.headline2,
                   ),
                 ),
                 Container(

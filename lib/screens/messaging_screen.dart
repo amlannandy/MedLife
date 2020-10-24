@@ -23,7 +23,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
       appBar: AppBar(
         title: Text(
           widget.doctorName,
-          style: Theme.of(context).textTheme.title,
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
       body: ListView.builder(

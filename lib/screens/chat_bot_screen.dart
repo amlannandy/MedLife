@@ -111,7 +111,7 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
           FlatButton(
             child: Text(
               isEnglish ? "English" : "हिंदी",
-              style: Theme.of(context).textTheme.display3,
+              style: Theme.of(context).textTheme.headline2,
             ),
             color: Colors.transparent,
             onPressed: () {
@@ -155,14 +155,14 @@ class AppBarDecoCustom extends StatelessWidget {
       alignment: Alignment.bottomLeft,
       width: double.infinity,
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [Color.fromRGBO(241, 39, 17, 0.6), Color.fromRGBO(245, 175, 25, 0.6)],
+        gradient: LinearGradient(List: [Color.fromRGBO(241, 39, 17, 0.6), Color.fromRGBO(245, 175, 25, 0.6)],
           begin: Alignment.bottomCenter,
           end: Alignment.topRight,
         ),
       ),
       child: Text(
         title,
-        style: Theme.of(context).textTheme.title,
+        style: Theme.of(context).textTheme.headline6,
       ),
     );
   }

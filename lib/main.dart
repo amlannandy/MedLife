@@ -80,31 +80,31 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
           ),
           textTheme: TextTheme(
-            title: TextStyle(
+            headline6: TextStyle(
               color: Colors.white,
               fontSize: 28,
               fontWeight: FontWeight.bold,
               fontFamily: "Montserrat",
             ),
-            display1: TextStyle(
+            headline4: TextStyle(
               color: Colors.orange[900],
               fontSize: 18,
               fontFamily: "Montserrat",
               fontWeight: FontWeight.bold,
             ),
-            display2: TextStyle(
+            headline3: TextStyle(
               color: Colors.orange[300],
               fontSize: 18,
               fontFamily: "Montserrat",
               fontWeight: FontWeight.bold,
             ),
-            display3: TextStyle(
+            headline2: TextStyle(
               color: Colors.white,
               fontSize: 18,
               fontFamily: "Montserrat",
               fontWeight: FontWeight.bold,
             ),
-            display4: TextStyle(
+            headline1: TextStyle(
               color: Colors.black,
               fontSize: 18,
               fontFamily: "Montserrat",

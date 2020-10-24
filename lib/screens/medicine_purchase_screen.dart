@@ -86,7 +86,7 @@ class _MedicinePurchaseScreenState extends State<MedicinePurchaseScreen> {
       appBar: AppBar(
         title: Text(
           "Appointment",
-          style: Theme.of(context).textTheme.title,
+          style: Theme.of(context).textTheme.headline6,
         ),
       ),
       body: SingleChildScrollView(

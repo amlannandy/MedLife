@@ -59,14 +59,14 @@ class _MapScreenState extends State<MapScreen> {
               width: double.infinity,
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [Color.fromRGBO(253, 200, 48, 1), Color.fromRGBO(243, 115, 53, 1)],
+                gradient: LinearGradient(List: [Color.fromRGBO(253, 200, 48, 1), Color.fromRGBO(243, 115, 53, 1)],
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
                 ),
               ),
               child: Text(
                 currentHospital.name,
-                style: Theme.of(context).textTheme.display3,
+                style: Theme.of(context).textTheme.headline2,
               ),
             ),
             Stack(
@@ -119,14 +119,14 @@ class _MapScreenState extends State<MapScreen> {
               width: double.infinity,
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [Color.fromRGBO(195, 20, 50, 1), Color.fromRGBO(36, 11, 54, 1)],
+                gradient: LinearGradient(List: [Color.fromRGBO(195, 20, 50, 1), Color.fromRGBO(36, 11, 54, 1)],
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
                 ),
               ),
               child: Text(
                 currentPharmacy.name,
-                style: Theme.of(context).textTheme.display3,
+                style: Theme.of(context).textTheme.headline2,
               ),
             ),
             Stack(
