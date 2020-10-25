@@ -36,7 +36,7 @@ Connect with nearby hospitals and pharmacies to book appointments and purchase m
 
 <div style="flex-direction: row;">
   <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/tests.jpg" style="margin-right: 10px;" width="200px" alt="">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/tests.jpg" style="margin-right: 10px;" width="200px" alt="">
+  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/testing.jpg" style="margin-right: 10px;" width="200px" alt="">
   <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/buy_medicine.jpg" width="200px" alt="">
 </div>
 
