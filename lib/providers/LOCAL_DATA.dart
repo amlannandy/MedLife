@@ -4,17 +4,17 @@ List<Fact> localData = [
   Fact(
     id: "1",
     name: "Don't buy into junk food hype. Eat fruits and veggies that are fresh and ripe.Say “No” to junk food.",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/medigo-b3817.appspot.com/o/healthy_habits%2Fsay_no_to_junkfood.jpg?alt=media&token=82eaf9cd-9e5c-4961-b579-acd7a74a4325",
+    imageUrl: "https://cdn-b.medlife.com/2018/01/fruits-and-vegetables-to-consume-in-winter.png",
   ),
   Fact(
     id: "2",
     name: "Carrots are rich in beta-carotene. They are also full of fiber and hence, aid digestion and can support your weight loss diet.",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/medigo-b3817.appspot.com/o/healthy_habits%2Fbalanced_diet.jpg?alt=media&token=5afc9413-556e-42b5-b920-39edbf91ec75",
+    imageUrl: "https://ucarecdn.com/459eb7be-115a-4d85-b1d8-deaabc94c643/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
   ),
   Fact(
     id: "3",
     name: "Eat fresh, eat local!",
-    imageUrl: "https://firebasestorage.googleapis.com/v0/b/medigo-b3817.appspot.com/o/healthy_habits%2Feat_fresh.jpg?alt=media&token=d260713a-4069-4ebb-a094-5892afb2810a",
+    imageUrl: "https://cdn.tasteatlas.com/images/dishes/b92a3d74b4cf48c28abba34197798049.jpg?w=600&h=450",
   ),
   Fact(
     id: "4",

@@ -1,4 +1,4 @@
-# MediGO
+# MedLife
 
 An App-based Healthcare service to carry out various medical tests in the comfort of your homes, without any need of complex medical equipment.
 

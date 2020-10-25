@@ -33,7 +33,7 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
               width: double.infinity,
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                gradient: LinearGradient(List: [Color.fromRGBO(253, 200, 48, 1), Color.fromRGBO(243, 115, 53, 1)],
+                gradient: LinearGradient(colors: [Color.fromRGBO(253, 200, 48, 1), Color.fromRGBO(243, 115, 53, 1)],
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
                 ),
@@ -142,14 +142,14 @@ class _TabsNavScreenState extends State<TabsNavScreen> {
         ],
       ),
       drawer: CustomDrawer(),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.redAccent,
-        child: Icon(
-          Icons.settings_input_svideo,
-          color: Colors.white,
-        ),
-        onPressed: () => showWearableStats(context),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   backgroundColor: Colors.redAccent,
+      //   child: Icon(
+      //     Icons.settings_input_svideo,
+      //     color: Colors.white,
+      //   ),
+      //   onPressed: () => showWearableStats(context),
+      // ),
     );
   }
 

@@ -16,7 +16,7 @@ class Pharmacies with ChangeNotifier {
     Firestore.instance.collection('pharmacies').snapshots().listen(
       (data) => data.documents.forEach((doc) =>
         temp.add(Pharmacy(
-          id: doc['id'],
+          id: doc.documentID,
           name: doc['name'],
           imageUrl: doc['imageUrl'],
           latitude: doc['latitude'],

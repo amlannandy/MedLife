@@ -15,7 +15,7 @@ class Hospitals with ChangeNotifier {
     Firestore.instance.collection('hospitals').snapshots().listen(
       (data) => data.documents.forEach((doc) =>
         temp.add(Hospital(
-          id: doc['id'],
+          id: doc.documentID,
           name: doc['name'],
           imageUrl: doc['imageUrl'],
           latitude: doc['latitude'],

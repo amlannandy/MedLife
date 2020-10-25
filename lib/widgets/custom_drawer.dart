@@ -51,7 +51,7 @@ class CustomDrawer extends StatelessWidget {
                 padding: EdgeInsets.all(20),
                 alignment: Alignment.bottomLeft,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(List: [Color.fromRGBO(241, 39, 17, 0.6), Color.fromRGBO(245, 175, 25, 0.6)],
+                  gradient: LinearGradient(colors: [Color.fromRGBO(241, 39, 17, 0.6), Color.fromRGBO(245, 175, 25, 0.6)],
                     begin: Alignment.bottomCenter,
                     end: Alignment.topRight,
                   ),

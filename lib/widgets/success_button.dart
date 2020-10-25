@@ -21,7 +21,7 @@ class SuccessButton extends StatelessWidget {
         padding: EdgeInsets.all(0.0),       
         child: Ink(
           decoration: BoxDecoration(
-              gradient: LinearGradient(List: [Color.fromRGBO(17, 153, 142, 1), Color.fromRGBO(56, 239, 125, 1)],
+              gradient: LinearGradient(colors: [Color.fromRGBO(17, 153, 142, 1), Color.fromRGBO(56, 239, 125, 1)],
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
               ),

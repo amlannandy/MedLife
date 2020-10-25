@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
-          flexibleSpace: AppBarDeco("MediGo"),
+          flexibleSpace: AppBarDeco("MedLife"),
           backgroundColor: Colors.transparent,
         ),
         SliverList(

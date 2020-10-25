@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: "MediGo",
+        title: "MedLife",
         theme: ThemeData(
           primaryColor: Colors.deepOrange[200],
           accentColor: Colors.grey[100],

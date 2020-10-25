@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "340386435965",
-    "firebase_url": "https://medigo-b3817.firebaseio.com",
-    "project_id": "medigo-b3817",
-    "storage_bucket": "medigo-b3817.appspot.com"
+    "project_number": "243561526462",
+    "firebase_url": "https://medlife-85dfe.firebaseio.com",
+    "project_id": "medlife-85dfe",
+    "storage_bucket": "medlife-85dfe.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:340386435965:android:1c8aebcb897b5954903214",
+        "mobilesdk_app_id": "1:243561526462:android:84fac12fdd061091541aef",
         "android_client_info": {
           "package_name": "com.teamcomplexity.healthcare_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "340386435965-j8eo3nqmi4ldg5sh9l0g3uo8ikrm4kqm.apps.googleusercontent.com",
+          "client_id": "243561526462-fq503in4vhsrite3r9kmc0irno6cd305.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAGtRAxAanoivOyuUxWHUD3P2YRYuiJINQ"
+          "current_key": "AIzaSyD61V0THjrTBXeo6UPZlYFNQbHf5c7sB5U"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "340386435965-j8eo3nqmi4ldg5sh9l0g3uo8ikrm4kqm.apps.googleusercontent.com",
+              "client_id": "243561526462-fq503in4vhsrite3r9kmc0irno6cd305.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
