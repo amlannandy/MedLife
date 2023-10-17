@@ -19,9 +19,9 @@ A Digital Healthcare Platform that allows you to take AI powered digital tests f
 Get premium health treatment from the comfort of your homes. Consult doctors and manage your health records in your phone itself.
 
 <div style="flex-direction: row;">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/home.jpg" style="margin-right: 10px;" width="200px" alt="">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/drawer.jpg" width="200px" alt="">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/doctors.jpg" width="200px" alt="">
+  <img src="https://github.com/scorelab/LabelLab/assets/45410599/10615f0f-46ba-4bda-8f5a-1250c8f470b0" style="margin-right: 10px;" width="200px" alt="">
+  <img src="https://github.com/scorelab/LabelLab/assets/45410599/7bfc8806-dcdc-4744-9f81-213f574ce71a" width="200px" alt="">
+  <img src="https://github.com/scorelab/LabelLab/assets/45410599/859d1876-993c-4c70-acc1-8da71094ad4a" width="200px" alt="">
 </div>
 
 ## Health Network
@@ -29,9 +29,9 @@ Get premium health treatment from the comfort of your homes. Consult doctors and
 Connect with nearby hospitals and pharmacies to book appointments or purchase medicines.
 
 <div style="flex-direction: row;">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/hospital.jpg" style="margin-right: 10px;" width="200px" alt="">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/pharmacy.jpg" style="margin-right: 10px;" width="200px" alt="">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/book_appointment.jpg" width="200px" alt="">
+  <img src="https://github.com/scorelab/LabelLab/assets/45410599/4d6e0f79-a18e-4859-8b97-4cf403814e0a" style="margin-right: 10px;" width="200px" alt="">
+  <img src="https://github.com/scorelab/LabelLab/assets/45410599/9a7a6a94-22ca-4c88-9d3f-8620a737dddb" style="margin-right: 10px;" width="200px" alt="">
+  <img src="https://github.com/scorelab/LabelLab/assets/45410599/93fe3935-1ff3-4e95-9cd9-f823bbf0b9c3" width="200px" alt="">
 </div>
 
 ## Take Digital Tests powered by Machine Learning
@@ -39,9 +39,9 @@ Connect with nearby hospitals and pharmacies to book appointments or purchase me
 Take various digital tests including Skin Cancer, Pnuemonia and several others, powered by Machine Learning models which can be done from the comfort of your homes.
 
 <div style="flex-direction: row;">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/tests.jpg" style="margin-right: 10px;" width="200px" alt="">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/testing.jpg" style="margin-right: 10px;" width="200px" alt="">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/buy_medicine.jpg" width="200px" alt="">
+  <img src="https://github.com/scorelab/LabelLab/assets/45410599/43efc6e6-bb67-40c8-9a1a-41e1d80f7727" style="margin-right: 10px;" width="200px" alt="">
+  <img src="https://github.com/scorelab/LabelLab/assets/45410599/2b500b95-f14a-470e-ad59-0f578fe4dbcd" style="margin-right: 10px;" width="200px" alt="">
+  <img src="https://github.com/scorelab/LabelLab/assets/45410599/ec7002dd-7469-4f9a-bf5c-a3accaf39157" width="200px" alt="">
 </div>
 
 ## Ask your health-related queries to a Multilingual Chatbot
@@ -49,7 +49,7 @@ Take various digital tests including Skin Cancer, Pnuemonia and several others, 
 Tell your symptoms to our multilingual chatbot which will analyze them to determine the cause and connect you with the correct doctor.
 
 <div style="flex-direction: row;">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/english.jpg" style="margin-right: 10px;" width="200px" alt="">
-  <img src="https://github.com/amlannandy/MedLife/blob/master/assets/screenshots/hindi.jpg" width="200px" alt="">
+  <img src="https://github.com/scorelab/LabelLab/assets/45410599/1e326c1e-2a8d-4a6c-9b48-ebcab60ab34a" style="margin-right: 10px;" width="200px" alt="">
+  <img src="https://github.com/scorelab/LabelLab/assets/45410599/bb7fc3ce-30e9-427f-9e32-907834c7209a" width="200px" alt="">
 </div>
 
